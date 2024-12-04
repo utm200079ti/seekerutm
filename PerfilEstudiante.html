@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil Estudiante</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/SEEKUTM.png" alt="Logo" class="header-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contactanos.html">Contactanos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ListaVacantes.html">Vacantes</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+          <ul class="navbar-nav ms-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Cuenta
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="InicioSesion.html">Iniciar Sesión</a></li>
+                <li><a class="dropdown-item" href="Registrarse.html">Registrarse</a></li>
+                <li><a class="dropdown-item" href="PerfilEstudiante.html">Perfil Estudiante</a></li>
+                <li><a class="dropdown-item" href="PerfilEmpresa.html">Perfil Empresa</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Perfil del Estudiante -->
+  <div class="container my-4">
+    <h2 class="mb-4">Perfil Estudiante</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Juan Pérez</h5>
+        <p class="card-text"><strong>Carrera:</strong> Ingeniería en Sistemas</p>
+        <p class="card-text"><strong>Universidad:</strong> Universidad de Ejemplo</p>
+        <p class="card-text"><strong>Email:</strong> juanperez@example.com</p>
+        <p class="card-text"><strong>Teléfono:</strong> +52 123 456 7890</p>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3">Editar Perfil</button>
+    <button class="btn btn-danger mt-3">Cerrar Sesión</button>
+  </div>
+  <!-- Contenedor Principal -->
+  <div class="container h2">Vacantes sugeridas</div>
+  <div class="container my-4">
+    <!-- Filtros -->
+    <div class="col-12 mb-3">
+      <label for="sectorFilter" class="form-label">Filtrar por Sector:</label>
+      <select id="sectorFilter" class="form-select">
+        <option value="">Todos los Sectores</option>
+        <option value="Tecnología">Tecnología</option>
+        <option value="Salud">Salud</option>
+        <option value="Educación">Educación</option>
+        <option value="Finanzas">Finanzas</option>
+      </select>
+
+      <label for="programFilter" class="form-label mt-2">Filtrar por Programa Educativo:</label>
+      <select id="programFilter" class="form-select">
+        <option value="">Todos los Programas</option>
+        <option value="BIO">BIO</option>
+        <option value="DMI">DMI</option>
+        <option value="ERV">ERV</option>
+        <option value="GST">GST</option>
+        <option value="MAI">MAI</option>
+        <option value="MECA">MECA</option>
+        <option value="TIC">TIC</option>
+      </select>
+    </div>
+
+    <!-- División principal -->
+    <div class="row">
+      <!-- Lista de Vacantes -->
+      <div class="col-md-6">
+        <h4>Vacantes Disponibles</h4>
+        <div id="vacantesList" class="list-group" style="max-height: 500px; overflow-y: auto;">
+          <!-- Vacantes serán cargadas dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Detalle de Vacante -->
+      <div class="col-md-6">
+        <h4>Detalles de la Vacante</h4>
+        <div id="vacanteDetail" class="border p-3 bg-light">
+          <p>Selecciona una vacante para ver más información.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para CV -->
+  <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cvModalLabel">Crear CV</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="cvForm">
+            <div class="mb-3">
+              <label for="cvName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="cvName" required>
+            </div>
+            <div class="mb-3">
+              <label for="cvSkills" class="form-label">Habilidades</label>
+              <textarea class="form-control" id="cvSkills" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="cvExperience" class="form-label">Experiencia</label>
+              <textarea class="form-control" id="cvExperience" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar CV</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-4">
+    <div class="footer-links mb-3">
+      <a href="#">Términos de Uso</a>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Accesibilidad</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/Instagram.png" alt="Twitter"></a>
+      <a href="#"><img src="img/Tiktok.png" alt="Instagram"></a>
+    </div>
+    <p>&copy; 2024 Plataforma Estadías. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

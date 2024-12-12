@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Enlace al icono para la pagina -->
+    <link rel="icon" href="IMG/SEEKUTM.svg" type="img/svg+xml">
+
+    <!-- Enlaces de CSS -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/Styles.css">
+    
 </head>
+
 <body>
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <h1 class="text-center mb-4">Registro de Usuario</h1>
-              <form id="registroForm" action="registro.php" method="POST">
+        <form id="registroForm" action="./PHP/registro.php" method="POST">
           <!-- Campos comunes -->
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre Completo:</label>
@@ -36,14 +45,14 @@
 
           <!--tipo de usurio-->
 
-         <div class="mb-3">
+          <div class="mb-3">
             <label for="tipoUsuario" class="form-label">Tipo de Usuario:</label>
             <select id="tipoUsuario" name="tipoUsuario" class="form-select" required>
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="estudiante">Estudiante</option>
-                <option value="unidad_economica">Unidad Economica</option>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="unidad_economica">Unidad Economica</option>
             </select>
-        </div>
+          </div>
 
           <!-- Campos para Estudiante -->
           <div id="camposEstudiante" style="display: none;">
@@ -117,9 +126,9 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./JS/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById('tipoUsuario').addEventListener('change', function() {
+    document.getElementById('tipoUsuario').addEventListener('change', function () {
       const tipoUsuario = this.value;
       const camposEstudiante = document.getElementById('camposEstudiante');
       const camposUnidadProductiva = document.getElementById('camposUnidadProductiva');
@@ -138,35 +147,35 @@
     document.getElementById("registroForm").addEventListener("submit", function (event) {
       // Solo se ejecuta si todo está bien
       console.log("Formulario enviado correctamente");
-	});
-    
-    document.getElementById('tipoUsuario').addEventListener('change', function() {
-  const tipoUsuario = this.value;
-  const camposEstudiante = document.getElementById('camposEstudiante');
-  const camposUnidadProductiva = document.getElementById('camposUnidadProductiva');
+    });
 
-  // Obtener todos los campos en cada sección
-  const inputsEstudiante = camposEstudiante.querySelectorAll('input, select');
-  const inputsUnidadProductiva = camposUnidadProductiva.querySelectorAll('input, select');
+    document.getElementById('tipoUsuario').addEventListener('change', function () {
+      const tipoUsuario = this.value;
+      const camposEstudiante = document.getElementById('camposEstudiante');
+      const camposUnidadProductiva = document.getElementById('camposUnidadProductiva');
 
-  // Ocultar todos los campos específicos y eliminar "required"
-  camposEstudiante.style.display = 'none';
-  inputsEstudiante.forEach(input => input.required = false);
-  
-  camposUnidadProductiva.style.display = 'none';
-  inputsUnidadProductiva.forEach(input => input.required = false);
+      // Obtener todos los campos en cada sección
+      const inputsEstudiante = camposEstudiante.querySelectorAll('input, select');
+      const inputsUnidadProductiva = camposUnidadProductiva.querySelectorAll('input, select');
 
-  // Mostrar campos según el tipo de usuario seleccionado y agregar "required"
-  if (tipoUsuario === 'estudiante') {
-    camposEstudiante.style.display = 'block';
-    inputsEstudiante.forEach(input => input.required = true);
-  } else if (tipoUsuario === 'unidad_economica') {
-    camposUnidadProductiva.style.display = 'block';
-    inputsUnidadProductiva.forEach(input => input.required = true);
-  }
-});
+      // Ocultar todos los campos específicos y eliminar "required"
+      camposEstudiante.style.display = 'none';
+      inputsEstudiante.forEach(input => input.required = false);
+
+      camposUnidadProductiva.style.display = 'none';
+      inputsUnidadProductiva.forEach(input => input.required = false);
+
+      // Mostrar campos según el tipo de usuario seleccionado y agregar "required"
+      if (tipoUsuario === 'estudiante') {
+        camposEstudiante.style.display = 'block';
+        inputsEstudiante.forEach(input => input.required = true);
+      } else if (tipoUsuario === 'unidad_economica') {
+        camposUnidadProductiva.style.display = 'block';
+        inputsUnidadProductiva.forEach(input => input.required = true);
+      }
+    });
 
   </script>
 </body>
-</html>
 
+</html>

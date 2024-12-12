@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio</title>
+
+  <!-- Enlace al icono para la pagina -->
+  <link rel="icon" href="IMG/SEEKUTM.svg" type="img/svg+xml">
+
+  <!-- Enlaces de CSS -->
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/Styles.css">
+
+  <!-- Enlace del Manifiesto -->
+  <link rel="manifest" href="Manifest.json">
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/SEEKUTM.png" alt="Logo" class="header-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contactanos.html">Contactanos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ListaVacantes.html">Vacantes</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+          <ul class="navbar-nav ms-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Cuenta
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="InicioSesion.html">Iniciar Sesión</a></li>
+                <li><a class="dropdown-item" href="Registrarse.html">Registrarse</a></li>
+                <li><a class="dropdown-item" href="PerfilEstudiante.html">Perfil Estudiante</a></li>
+                <li><a class="dropdown-item" href="PerfilEmpresa.html">Perfil Empresa</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Carrusel -->
+  <div id="opcionesCarrusel" class="carousel slide mt-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+          <h2>Registrarse</h2>
+          <p>¿Nuevo usuario? Crea una cuenta fácilmente.</p>
+          <a href="Registrarse.html" class="btn btn-primary">Registrarse</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+          <h2>Iniciar Sesión</h2>
+          <p>¿Ya tienes una cuenta? Inicia sesión aquí.</p>
+          <a href="InicioSesion.html" class="btn btn-secondary">Iniciar Sesión</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#opcionesCarrusel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#opcionesCarrusel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- Descripcion -->
+  <div class="container mt-4">
+    <p class="lead text-center">
+      Bienvenidos a <strong>SEEKERUTM</strong>, una solución diseñada para conectar a estudiantes con empresas de manera
+      eficiente.
+      Nuestro objetivo es simplificar el proceso de búsqueda e inscripción en estadías, permitiendo a los usuarios
+      encontrar oportunidades que se alineen
+      con sus intereses y objetivos profesionales. ¡Comienza tu camino hacia el éxito hoy mismo!
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <div class="footer-links mb-3">
+      <a href="#">Términos de Uso</a>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Accesibilidad</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/Instagram.png" alt="Twitter"></a>
+      <a href="#"><img src="img/Tiktok.png" alt="Instagram"></a>
+    </div>
+    <p>&copy; 2024 SEEKERUTM. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="JS/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./serviceWorker.js')
+      .then(function (registration) {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch(function (error) {
+        console.log('Error al registrar el Service Worker:', error);
+      });
+  }
+</script>
+
+</html>

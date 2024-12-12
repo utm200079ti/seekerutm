@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+</head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar Datos - Unidad Económica</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center mb-4">Actualizar Datos - Unidad Económica</h1>
+        <form action="./PHP/actualizarUsuario.php" method="POST">
+          <!-- Datos comunes -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="numero" class="form-label">Número Telefónico:</label>
+            <input type="tel" id="numero" name="numero" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+          </div>
+          <br>
+
+          <!-- Datos específicos de unidades económicas -->
+          <div class="mb-3">
+            <label for="nomUE" class="form-label">Nombre de la Unidad Productiva:</label>
+            <input type="text" id="nomUE" name="nomUE" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="rfc" class="form-label">RFC:</label>
+            <input type="text" id="rfc" name="rfc" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="localidad" class="form-label">Localidad:</label>
+            <select id="localidad" name="localidad" class="form-select" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Local">Local</option>
+              <option value="Estatal">Estatal</option>
+              <option value="Foranea">Foránea</option>
+              <option value="Internacional">Internacional</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="domicilio" class="form-label">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="programa" class="form-label">Programa Educativo:</label>
+            <select id="programa" name="programa" class="form-select" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="BIO">BIO</option>
+              <option value="DMI">DMI</option>
+              <option value="ERV">ERV</option>
+              <option value="GST">GST</option>
+              <option value="MAI">MAI</option>
+              <option value="MECA">MECA</option>
+              <option value="TIC">TIC</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Actualizar Datos</button>
+        </form>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+
+{
+    "scope": ".",
+    "name": "SEEKER UTM",
+    "id": "SEEKER_UTM",
+    "short_name": "SEEKER UTM",
+    "start_url": "Index.html",
+    "display": "standalone",
+    "background_color": "#14837D",
+    "theme_color": "#14837D",
+    "description": " Aplicacion Web Progresiva",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "./IMG/SEEKUTM.png",
+            "type": "image/png",
+            "sizes": "699x699"
+        }
+    ]
+}

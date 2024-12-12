@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Vacantes</title>
+
+  <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="./CSS/Styles.css">
+
+</head>
+
+<body>
+
+  <?php include 'navare.html';?>
+
+  <!-- Contenedor Principal -->
+  <div class="container my-4">
+
+    <!-- División principal -->
+    <div class="row">
+      <!-- Lista de Vacantes -->
+      <div class="col-md-6">
+        <h3>Mis V</h3>
+        <div id="vacantesList" class="list-group" style="max-height: 500px; overflow-y: auto;">
+          <!-- Vacantes serán cargadas dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Detalle de Vacante -->
+      <div class="col-md-6">
+        <h3>Detalles de la Vacante</h3>
+        <div id="vacanteDetail" class="border p-3 bg-light">
+          <p>Selecciona una vacante para ver más información.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para CV -->
+  <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cvModalLabel">Crear CV</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="cvForm">
+            <div class="mb-3">
+              <label for="cvName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="cvName" required>
+            </div>
+            <div class="mb-3">
+              <label for="cvSkills" class="form-label">Habilidades</label>
+              <textarea class="form-control" id="cvSkills" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="cvExperience" class="form-label">Experiencia</label>
+              <textarea class="form-control" id="cvExperience" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar CV</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <?php include 'footer.html'?>
+
+
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+  <script src="vacantes.js"></script>
+</body>
+
+</html>

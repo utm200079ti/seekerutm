@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+      <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Registro de Curriculum Vitae</h1>
+                <form id="cvForm" action="./PHP/insertar_cv.php" method="POST">
+                    <!-- Resumen Profesional u Objetivo -->
+                    <div class="mb-3">
+                        <label for="resumen" class="form-label">Resumen Profesional o Objetivo:</label>
+                        <textarea id="resumen" name="resumen" class="form-control" rows="4"
+                            placeholder="Breve párrafo sobre tu experiencia y objetivos profesionales."
+                            required></textarea>
+                    </div>
+
+                    <!-- Formación Académica -->
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Nombra los Títulos o Grados Obtenidos:</label>
+                        <input type="text" id="titulo" name="titulo" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="institucion" class="form-label">Nombra las Instituciones Educativas en donde has
+                            estudiado (fecha de inicio e inicialización):</label>
+                        <textarea id="institucion" name="institucion" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="logros_academicos" class="form-label">Distinciones o Logros Académicos:</label>
+                        <textarea id="logros_academicos" name="logros_academicos" class="form-control" rows="3"
+                            placeholder="Si aplica, puedes mencionar tus logros académicos relevantes."></textarea>
+                    </div>
+
+                    <!-- Habilidades -->
+                    <div class="mb-3">
+                        <label for="idiomas" class="form-label">Idiomas (con nivel de dominio):</label>
+                        <input type="text" id="idiomas" name="idiomas" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="herramientas" class="form-label">Herramientas y Software Específicos:</label>
+                        <input type="text" id="herramientas" name="herramientas" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="habilidades_interpersonales" class="form-label">Habilidades Interpersonales:</label>
+                        <input type="text" id="habilidades_interpersonales" name="habilidades_interpersonales"
+                            class="form-control" required>
+                    </div>
+
+                    <!-- Botón de Enviar -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>

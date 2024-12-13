@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #14837D;
+}
+
+p {
+    color: #6c757d;
+}
+
+.btn {
+    background-color: #14837D;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #0e5c56;
+}
